@@ -1,0 +1,785 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>MomentsHub - Where Every Moment Matters</title> <meta name="apple-itunes-app" content="app-id=6504739040"/> <link href="/fav.ico" rel="icon" /> <link href="/manifest.webmanifest" rel="manifest" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="57x57" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="60x60" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="72x72" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="114x114" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="120x120" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="144x144" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="152x152" /> <link href="/fav.ico" rel="apple-touch-icon" sizes="180x180" /> <meta property="og:url" content="https://yourmomentshub.com/" /> <meta property="og:site_name" content="MomentsHub" /> <meta property="og:title" content="MomentsHub" /> <meta property="og:type" content="website" /> <meta property="og:image" content="https://img1.wsimg.com/isteam/stock/ub69pPpJ27t6nR13E" /> <meta property="og:locale" content="en_US" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="MomentsHub" /> <meta name="twitter:description" content="Capture and explore real-time moments shared by users worldwide" /> <meta name="twitter:image" content="https://img1.wsimg.com/isteam/stock/ub69pPpJ27t6nR13E" /> <meta name="twitter:image:alt" content="MomentsHub" /> <meta name="theme-color" content="#6F6F6F" /> <!-- --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> <!-- --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> <!-- --> <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file --> <script src="https://cdn.amplitude.com/libs/analytics-browser-2.10.0-min.js.gz"></script> <script> window.amplitude.init("6f5b805f15108ed81ebdb14c20bca1aa", { autocapture: { elementInteractions: true } }); </script> <style> :root { --primary-color: #ff6657; --secondary-color: #ff9a8d; --text-color: #333; --light-text: #fff; --dark-bg: #333; --transition-speed: 0.5s; --section-1-bg: #fff3f1; --section-2-bg: #f5f9ff; --section-3-bg: #fff8f3; --section-4-bg: #f5fff8; }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        color: var(--text-color);
+        overflow-x: hidden;
+        background-color: #fff;
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .section {
+        padding: 80px 20px;
+        transition: background-color var(--transition-speed) ease;
+    }
+
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 15px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: padding 0.3s ease;
+    }
+
+    .header.scrolled {
+        padding: 10px 20px;
+    }
+
+    .header img {
+        max-width: 180px;
+        transition: max-width 0.3s ease;
+    }
+
+    .header.scrolled img {
+        max-width: 150px;
+    }
+
+    .nav-toggle {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--light-text);
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navigation a {
+        color: var(--light-text);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
+
+    .navigation a:hover {
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    main {
+        margin-top: 150px;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .container-main {
+        min-height: 500px;
+        padding: 80px 20px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1, h2, h3 {
+        font-family: "Libre Baskerville", serif;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+        animation: fadeInDown 1.2s ease-in-out;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+    }
+
+    h3 {
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    h3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 50px;
+        height: 3px;
+        background: var(--primary-color);
+    }
+
+    .container-line {
+        border: none;
+        background-color: var(--primary-color);
+        width: 100px;
+        height: 3px;
+        margin: 0 auto 30px;
+        position: relative;
+        transition: width 0.5s ease;
+    }
+
+    .container-line:before, .container-line:after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        background-color: var(--primary-color);
+        width: 10px;
+        top: 0;
+    }
+
+    .container-line:before {
+        left: -15px;
+    }
+
+    .container-line:after {
+        right: -15px;
+    }
+
+    .container:hover .container-line {
+        width: 150px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        animation: fadeInUp 1.5s ease-in-out;
+        max-width: 800px;
+        line-height: 1.8;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container-details {
+        text-align: center;
+        margin: auto;
+        line-height: 2rem;
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .feature-section {
+        padding: 100px 20px;
+    }
+
+    .container-column-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .container-row-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 40px 0;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* .container-row-details:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    } */
+
+    .screenshots {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .screenshots img {
+        max-width: 280px;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    /* .screenshots img:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    } */
+
+    .container-row-text_odd, .container-row-text_even {
+        flex: 1;
+        padding: 0 30px;
+        text-align: left;
+    }
+
+    .container-row-text_odd p, .container-row-text_even p {
+        text-align: left;
+        line-height: 2rem;
+    }
+
+    .download-section {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: var(--light-text);
+        border-radius: 10px;
+        margin: 80px 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .download-section h2 {
+        color: var(--light-text);
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .download-section .container-line {
+        background-color: var(--light-text);
+    }
+
+    .download-section .container-line:before, 
+    .download-section .container-line:after {
+        background-color: var(--light-text);
+    }
+
+    .download-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 40px;
+        animation: bounceIn 1.8s ease-in-out;
+    }
+
+    .download-buttons a {
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .download-buttons a:hover {
+        transform: scale(1.05);
+    }
+
+    .download-buttons img {
+        max-width: 180px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+    }
+
+    @keyframes bounceIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% {
+            transform: scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .contact-section {
+        background-color: var(--section-4-bg);
+        color: var(--text-color);
+        padding: 80px 20px;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .contact-section_feedback {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .social-icons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-icons a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        transform: scale(1.1) rotate(5deg);
+        background-color: var(--secondary-color);
+    }
+
+    .social-icons a img {
+        width: 30px;
+        height: 30px;
+        filter: brightness(0) invert(1);
+    }
+
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--primary-color);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
+
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        background: var(--secondary-color);
+        transform: translateY(-5px);
+    }
+
+    .footer {
+        background-color: var(--dark-bg);
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .footer a {
+        color: var(--secondary-color);
+        text-decoration: none;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
+
+    .show-on-mobile {
+        display: none;
+    }
+
+    /* Loading animation */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loading-screen.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .loader {
+        width: 80px;
+        height: 80px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        main {
+            margin-top: 120px;
+        }
+
+        .nav-toggle {
+            display: block;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background-color: var(--primary-color);
+            flex-direction: column;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .navigation.active {
+            height: auto;
+            padding: 20px 0;
+            opacity: 1;
+        }
+
+        .navigation a {
+            margin: 10px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .container-main {
+            height: auto;
+        }
+
+        .show-on-desktop {
+            display: none;
+        }
+
+        .show-on-mobile {
+            display: block;
+        }
+
+        .container-row-details {
+            flex-direction: column;
+            padding: 20px 0;
+        }
+
+        .container-row-details_even {
+            flex-direction: column-reverse;
+        }
+
+        .container-row-text_even,
+        .container-row-text_odd {
+            margin: 20px;
+            padding: 0;
+        }
+
+        .container-line {
+            width: 80px;
+        }
+
+        .screenshots img {
+            max-width: 90%;
+        }
+
+        .download-buttons {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+    }
+
+    /* Animation for scrolling */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+</head> <body> <!-- Loading Screen --> <div class="loading-screen"> <div class="loader"></div> </div>
+
+<div class="header" id="header">
+    <a href="https://yourmomentshub.com">
+        <img src="/public/icons/MomentsHubLogo2.png" alt="MomentsHub Logo">
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <!-- <div class="navigation" id="navigation">
+        <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
+        <a href="#stayloop">Stay in Loop</a>
+        <a href="#capture">Share</a>
+        <a href="#contact">Contact</a>
+    </div> -->
+</div>
+
+<main>
+    <section id="home" class="section" data-bg="var(--section-1-bg)">
+        <div class="container container-main animate-on-scroll">
+            <h1>Experience MomentsHub</h1>
+            <div class="container-line"></div>
+            <p class="container-details">
+                MomentsHub is the ultimate app for capturing, sharing, and engaging with the moments that matter most. Whether it's a stunning photo, a heartfelt story, or a quick poll, MomentsHub lets you connect with a community that shares your passions. Post your moments, vote on fun polls, and follow friends to see what they're up to. Join us today and be part of a growing community where every moment counts.
+            </p>
+        </div>
+    </section>
+
+    <section id="explore" class="section feature-section" data-bg="var(--section-2-bg)">
+        <div class="container container-column-details">
+            <div class="container-row-details animate-on-scroll">
+                <h3 class="show-on-mobile">Explore Moments from Around the World</h3>
+                <div class="screenshots">
+                    <img src="screenshot1.png" alt="Screenshot 1"> 
+                </div>
+                <div class="container-row-text_odd">
+                    <h3 class="show-on-desktop">Explore Moments from Around the World</h3>
+                    <p>
+                        Dive into a vibrant tapestry of experiences with MomentsHub! Discover stunning photos and captivating stories from users across the globe. Whether it's breathtaking landscapes, cultural celebrations, or personal milestones, each moment tells a unique tale. Join our community and explore the diverse perspectives that make our world extraordinary. Share in the joy of others and find inspiration in every corner of the planet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stayloop" class="section feature-section" data-bg="var(--section-3-bg)">
+        <div class="container container-column-details">
+            <div class="container-row-details container-row-details_even animate-on-scroll">
+                <div class="container-row-text_even">
+                    <h3 class="show-on-desktop">Always Stay in the Loop</h3>
+                    <p>
+                        Never miss a beat with MomentsHub! Follow your friends and favorite creators to stay updated on the moments that matter most to them. Our intuitive feed keeps you in the loop, showcasing the latest photos, stories, and polls. Engage with your community by commenting, liking, and sharing, ensuring you're always part of the conversation. With MomentsHub, you'll feel connected and informed, no matter where life takes you.
+                    </p>
+                </div>
+                <div class="screenshots">
+                    <img src="screenshot3.png" alt="Screenshot 3">
+                </div>
+                <h3 class="show-on-mobile">Always Stay in the Loop</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="capture" class="section feature-section" data-bg="var(--section-4-bg)">
+        <div class="container container-column-details">
+            <div class="container-row-details animate-on-scroll">
+                <h3 class="show-on-mobile">Capture and Share Moments and Polls</h3>
+                <div class="screenshots">
+                    <img src="screenshot2.png" alt="Screenshot 2">
+                </div>
+                <div class="container-row-text_odd">
+                    <h3 class="show-on-desktop">Capture and Share Moments and Polls</h3>
+                    <p>
+                        Unleash your creativity with MomentsHub! Capture the essence of your life by sharing stunning photos and heartfelt stories. But that's not all—engage your community with fun polls that spark conversations and gather opinions. Whether you're asking for advice or just want to see what everyone thinks about a trending topic, our platform makes it easy to interact and connect. Join us today and start sharing your moments and polls with a community that values every voice!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-section animate-on-scroll">
+        <div class="container">
+            <h2>Ready to Join the Community?</h2>
+            <div class="container-line"></div>
+            <p>Download MomentsHub today and start capturing, sharing, and discovering moments that matter.</p>
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.daramfon.MomentsHub">
+                    <img src="https://yourmomentshub.com/icons/downloadgoogleplay.png" alt="Get it on Google Play"> 
+                </a>
+                <a href="https://apps.apple.com/us/app/momentshub/id6504739040">
+                    <img src="https://yourmomentshub.com/icons/downloadappstore.png" alt="Download on the App Store"> 
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section animate-on-scroll">
+        <h2>Stay Connected with MomentsHub</h2>
+        <div class="container-line"></div>
+        <div class="contact-section_feedback">
+            <p class="center-text">Follow us on social media or email us your feedback and ideas to make MomentsHub even better!</p>
+        </div>
+        <div class="social-icons">
+            <a href="mailto:contact@yourmomentshub.com" target="_blank">
+                <img src="https://yourmomentshub.com/icons/mail.png" alt="Email">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61564646605751" target="_blank">
+                <img src="https://yourmomentshub.com/icons/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://instagram.com/yourmomentshub" target="_blank">
+                <img src="https://yourmomentshub.com/icons/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </section>
+</main>
+
+<a href="#home" class="back-to-top" id="backToTop">↑</a>
+
+<div class="footer">
+    &copy; 2024 MomentsHub. All rights reserved. | <a href="privacy-and-safety">Privacy Policy</a> 
+</div>
+
+<script>
+    // Loading screen
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.querySelector('.loading-screen').classList.add('hidden');
+        }, 500);
+    });
+
+    // Navigation toggle for mobile
+    document.getElementById('navToggle').addEventListener('click', function() {
+        document.getElementById('navigation').classList.toggle('active');
+    });
+
+    // Header shrink on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Back to top button visibility
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    // Scroll animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    const sections = document.querySelectorAll('.section');
+    
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(element => {
+        observer.observe(element);
+    });
+    
+    // Intersection Observer for section background changes
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bgColor = entry.target.getAttribute('data-bg');
+                document.body.style.backgroundColor = bgColor;
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100, // Offset for fixed header
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('navigation').classList.remove('active');
+            }
+        });
+    });
+</script>
+</body> </html>

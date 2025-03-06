@@ -102,6 +102,12 @@ p {
     flex: 1;
 }
 
+/* .header-left {
+    background-color: var(--primary-color);
+    padding: 0px 10px;
+    border-radius: 8px;
+} */
+
 .header-center {
     flex: 2;
     display: flex;
@@ -151,6 +157,8 @@ p {
 
 .header img {
     height: 40px;
+    margin: auto;
+    width: 100%;
     transition: var(--transition);
 }
 
@@ -353,6 +361,9 @@ p {
 }
 
 /* Download Section */
+.download-section {
+    background-color: var(--section-bg);
+}
 .download {
     padding: 100px 0;
     margin: 0 4rem;
@@ -555,13 +566,17 @@ p {
     }
     
     .header-inner {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
+    }
+
+    .header-center {
+        display: none;
     }
     
-    .header-center ul {
+    /* .header-center ul {
         gap: 1rem;
-    }
+    } */
     
     .feature-row, 
     .feature-row:nth-child(even) {
@@ -704,21 +719,24 @@ p {
       </div>
     </section>
 
-    <section class="download" id="download">
-      <div class="container">
-        <h2 class="download-title">Download MomentsHub Today</h2>
-        <div class="divider"></div>
-        <p>Available on iOS and Android. Start capturing your moments now!</p>
-        
-        <div class="download-buttons">
-          <a href="https://play.google.com/store/apps/details?id=com.daramfon.MomentsHub" class="download-btn">
-            <img src="https://yourmomentshub.com/icons/downloadgoogleplay.png" alt="Get it on Google Play">
-          </a>
-          <a href="https://apps.apple.com/us/app/momentshub/id6504739040" class="download-btn">
-            <img src="https://yourmomentshub.com/icons/downloadappstore.png" alt="Download on the App Store">
-          </a>
-        </div>
-      </div>
+
+    <section class="download-section"> 
+        <section class="download" id="download">
+          <div class="container">
+            <h2 class="download-title">Download MomentsHub Today</h2>
+            <!-- <div class="divider"></div> -->
+            <p>Available on iOS and Android!</p>
+            
+            <div class="download-buttons">
+              <a href="https://play.google.com/store/apps/details?id=com.daramfon.MomentsHub" class="download-btn">
+                <img src="https://yourmomentshub.com/icons/downloadgoogleplay.png" alt="Get it on Google Play">
+              </a>
+              <a href="https://apps.apple.com/us/app/momentshub/id6504739040" class="download-btn">
+                <img src="https://yourmomentshub.com/icons/downloadappstore.png" alt="Download on the App Store">
+              </a>
+            </div>
+          </div>
+        </section>
     </section>
 
     <section class="contact" id="contact">
@@ -745,7 +763,7 @@ p {
 
     <footer class="footer">
       <div class="container">
-        &copy; 2024 MomentsHub. All rights reserved. | <a href="privacy-and-safety">Privacy Policy</a>
+        &copy; 2025 MomentsHub. All rights reserved. | <a href="privacy-and-safety">Privacy Policy</a>
       </div>
     </footer>
 

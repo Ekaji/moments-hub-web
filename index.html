@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MomentsHub - Where Every Moment Matters</title>
+    <meta name="apple-itunes-app" content="app-id=6504739040"/>
+    <link href="/fav.ico" rel="icon" />
+    <link href="/manifest.webmanifest" rel="manifest" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="57x57" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="60x60" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="72x72" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="114x114" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="120x120" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="144x144" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="152x152" />
+    <link href="/fav.ico" rel="apple-touch-icon" sizes="180x180" />
+    <meta property="og:url" content="https://yourmomentshub.com/" />
+    <meta property="og:site_name" content="MomentsHub" />
+    <meta property="og:title" content="MomentsHub" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://img1.wsimg.com/isteam/stock/ub69pPpJ27t6nR13E" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MomentsHub" />
+    <meta name="twitter:description" content="Capture and explore real-time moments shared by users worldwide" />
+    <meta name="twitter:image" content="https://img1.wsimg.com/isteam/stock/ub69pPpJ27t6nR13E" />
+    <meta name="twitter:image:alt" content="MomentsHub" />
+    <meta name="theme-color" content="#6F6F6F" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/momentshub.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.10.0-min.js.gz"></script>
+    <script>
+      window.amplitude.init("6f5b805f15108ed81ebdb14c20bca1aa", {
+          autocapture: { elementInteractions: true }
+      });
+    </script>
     <style>
         /* Base Styles */
 :root {
     --primary-color: #ff6657;
     --secondary-color: #ff9500;
+    --primary-background: rgba(255, 102, 87, .1);
+    --secondary-background: rgba(255, 149, 0, .5);
     --text-color: #1d1d1f;
     --light-text: #86868b;
     --background: #ffffff;
@@ -43,6 +74,7 @@ h1, h2, h3 {
     letter-spacing: -0.025em;
 }
 
+
 h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
@@ -63,10 +95,25 @@ h3 {
     margin-bottom: 1rem;
 }
 
+h1, h2, h3 {
+        font-family: "Libre Baskerville", serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
 p {
     font-size: 1.125rem;
     line-height: 1.6;
-    color: var(--light-text);
+    /* color: var(--light-text); */
+    color: #1d1d1f;
     margin-bottom: 1.5rem;
 }
 
@@ -202,7 +249,8 @@ p {
     padding-top: 120px;
     padding-bottom: 100px;
     text-align: center;
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background-color: var(--primary-background);
     position: relative;
     overflow: hidden;
 }
@@ -286,7 +334,7 @@ p {
 
 /* Features */
 .features {
-    padding: 100px 0;
+    padding: 0px 0px 100px 0;
     background-color: var(--section-bg);
 }
 
@@ -297,11 +345,12 @@ p {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s ease, transform 1s ease;
+    margin: 100px;
 }
 
-.feature-row:last-child {
+/* .feature-row:last-child {
     margin-bottom: 0;
-}
+} */
 
 .feature-row.visible {
     opacity: 1;
@@ -360,6 +409,12 @@ p {
     border-radius: 2px;
 }
 
+.featured-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Download Section */
 .download-section {
     background-color: var(--section-bg);
@@ -391,10 +446,11 @@ p {
     z-index: -1;
 }
 
-.download-title {
+div.container > h2.download-title {
     margin-bottom: 2rem;
     opacity: 0;
     transform: translateY(20px);
+    color:#f5f5f7;
 }
 
 .download-title.visible {
@@ -584,6 +640,10 @@ p {
         gap: 3rem;
         margin-bottom: 80px;
     }
+
+    .feature-row {
+        margin: 50px 0px;
+    }
     
     .feature-content {
         text-align: center;
@@ -628,12 +688,27 @@ p {
     .contact {
         padding: 70px 0;
     }
+
+    .features {
+        padding: 0px 0;
+    }
+
+    .feature-row {
+        margin: 50px 0px;
+    }
 }
+
+.background-grid {
+    background-color: #ffffff;
+    background-image: radial-gradient(#888888 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
 
     </style>
   </head>
   <body>
-    <header class="header">
+    <header class="header" >
       <div class="container">
         <div class="header-inner">
           
@@ -662,15 +737,15 @@ p {
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero background-grid ">
       <div class="container">
         <div class="hero-content">
           <!-- <div class="tagline">Where every moment matters</div> -->
           <h1>Capture & Share Real-Time Moments</h1>
           <p>Discover moments happening around you in real-time. Capture and share experiences wherever you are. Be part of the community today!</p>
-          <div class="divider"></div>
+          <!-- <div class="divider"></div> -->
           <div class="video-container">
-            <video controls autoplay muted loop>
+            <video autoplay muted loop>
               <source src="/public/video/momentshub.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -679,51 +754,57 @@ p {
       </div>
     </section>
 
-    <section class="features" id="features">
-      <div class="container">
-        <div class="feature-row">
-          <div class="feature-content">
-            <h3 class="feature-title">Explore Moments from Around the World</h3>
-            <p>
-              Dive into a vibrant tapestry of experiences with MomentsHub! Discover stunning photos and captivating stories from users across the globe. Whether it's breathtaking landscapes, cultural celebrations, or personal milestones, each moment tells a unique tale.
-            </p>
-          </div>
-          <div class="feature-image">
-            <img src="https://yourmomentshub.com/screenshot1.png" alt="Explore Moments" loading="lazy">
-          </div>
+    <section class="features section" id="features">
+      <div class="">
+        <div class="featured-container">
+            <div class="feature-row  container">
+              <div class="feature-content">
+                <h3 class="feature-title">Explore Moments from Around the World</h3>
+                <p>
+                  Dive into a vibrant tapestry of experiences with MomentsHub! Discover stunning photos and captivating stories from users across the globe. Whether it's breathtaking landscapes, cultural celebrations, or personal milestones, each moment tells a unique tale.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img src="https://yourmomentshub.com/screenshot1.png" alt="Explore Moments" loading="lazy">
+              </div>
+            </div>
         </div>
         
-        <div class="feature-row">
-          <div class="feature-content">
-            <h3 class="feature-title">Always Stay in the Loop</h3>
-            <p>
-              Never miss a beat with MomentsHub! Follow your friends and favorite creators to stay updated on the moments that matter most to them. Our intuitive feed keeps you in the loop, showcasing the latest photos, stories, and polls.
-            </p>
-          </div>
-          <div class="feature-image">
-            <img src="https://yourmomentshub.com/screenshot3.png" alt="Stay in the Loop" loading="lazy">
-          </div>
+        <div class="featured-container">
+            <div class="feature-row container">
+              <div class="feature-content">
+                <h3 class="feature-title">Always Stay in the Loop</h3>
+                <p>
+                  Never miss a beat with MomentsHub! Follow your friends and favorite creators to stay updated on the moments that matter most to them. Our intuitive feed keeps you in the loop, showcasing the latest photos, stories, and polls.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img src="https://yourmomentshub.com/screenshot3.png" alt="Stay in the Loop" loading="lazy">
+              </div>
+            </div>
         </div>
         
-        <div class="feature-row">
-          <div class="feature-content">
-            <h3 class="feature-title">Capture and Share Moments and Polls</h3>
-            <p>
-              Unleash your creativity with MomentsHub! Capture the essence of your life by sharing stunning photos and heartfelt stories. Engage your community with fun polls that spark conversations and gather opinions.
-            </p>
-          </div>
-          <div class="feature-image">
-            <img src="https://yourmomentshub.com/screenshot2.png" alt="Capture and Share" loading="lazy">
-          </div>
+        <div class="featured-container">
+            <div class="feature-row container">
+              <div class="feature-content">
+                <h3 class="feature-title">Capture and Share Moments and Polls</h3>
+                <p>
+                  Unleash your creativity with MomentsHub! Capture the essence of your life by sharing stunning photos and heartfelt stories. Engage your community with fun polls that spark conversations and gather opinions.
+                </p>
+              </div>
+              <div class="feature-image">
+                <img src="https://yourmomentshub.com/screenshot2.png" alt="Capture and Share" loading="lazy">
+              </div>
+            </div>
         </div>
       </div>
     </section>
 
 
-    <section class="download-section"> 
+    <section class="download-section section" id="section-2"> 
         <section class="download" id="download">
           <div class="container">
-            <h2 class="download-title">Download MomentsHub Today</h2>
+            <h4 class="download-title">Download MomentsHub Today</h4>
             <!-- <div class="divider"></div> -->
             <p>Available on iOS and Android!</p>
             
@@ -739,7 +820,7 @@ p {
         </section>
     </section>
 
-    <section class="contact" id="contact">
+    <section class="contact section" id="contact section-3">
       <div class="container">
         <div class="contact-inner">
           <h2>Stay Connected with MomentsHub</h2>
@@ -855,6 +936,56 @@ document.addEventListener('DOMContentLoaded', function() {
       behavior: 'smooth'
     });
   });
+});
+
+// animated background-grid
+// Get all elements with the 'feature-row' class
+const featureRows = document.querySelectorAll('.featured-container');
+
+// Define an array of different background colors
+const backgroundColors = [
+  '#f0f7ff', // Light blue
+  '#fff6e9', // Light orange/peach
+  '#f0fff4'  // Light green
+];
+
+// Options for the Intersection Observer
+const options = {
+  root: null, // Use the viewport as the root
+  rootMargin: '0px', // No margin
+  threshold: 0.3 // Trigger when 30% of the element is visible
+};
+
+// Callback function to execute when the observed elements intersect with the viewport
+const handleIntersection = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Get the index of the current feature row
+      const index = Array.from(featureRows).indexOf(entry.target);
+      
+      // Apply a different background color based on the index
+      // Use modulo to handle cases with more elements than colors
+      const colorIndex = index % backgroundColors.length;
+      
+      // Apply the background color and styling
+      entry.target.style.backgroundColor = backgroundColors[colorIndex];
+      entry.target.style.transition = 'background-color 0.7s ease';
+      entry.target.style.borderRadius = '8px';
+      entry.target.style.padding = '20px';
+    } else {
+      // Optional: Change back when not in viewport
+      // Uncomment the line below if you want the background to reset when out of view
+      // entry.target.style.backgroundColor = '';
+    }
+  });
+};
+
+// Create a new Intersection Observer instance
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Start observing each feature row
+featureRows.forEach(row => {
+  observer.observe(row);
 });
 
     </script>

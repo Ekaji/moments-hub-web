@@ -41,8 +41,8 @@
     <style>
         /* Base Styles */
 :root {
-    --primary-color: #ff6657;
-    --secondary-color: #ff9500;
+    --primary-color: #FF6F61;
+    --secondary-color: #ff6657; 
     --primary-background: rgba(255, 102, 87, .1);
     --secondary-background: rgba(255, 149, 0, .5);
     --text-color: #1d1d1f;
@@ -114,7 +114,7 @@ p {
     line-height: 1.6;
     /* color: var(--light-text); */
     color: #1d1d1f;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 
 /* Layout */
@@ -139,6 +139,10 @@ p {
     transition: var(--transition);
 }
 
+.header-container {
+    padding: 0px 50px;
+}
+
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -149,11 +153,10 @@ p {
     flex: 1;
 }
 
-/* .header-left {
-    background-color: var(--primary-color);
-    padding: 0px 10px;
-    border-radius: 8px;
-} */
+.header-left > a > img {
+    width: 150px;
+    object-fit: contain;
+}
 
 .header-center {
     flex: 2;
@@ -348,6 +351,10 @@ p {
     margin: 100px;
 }
 
+.feature-row-reverse {
+    flex-direction: row-reverse;
+}
+
 /* .feature-row:last-child {
     margin-bottom: 0;
 } */
@@ -463,7 +470,7 @@ div.container > h2.download-title {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 3rem;
+    margin: 1rem 0;
 }
 
 .download-btn {
@@ -630,9 +637,13 @@ div.container > h2.download-title {
         display: none;
     }
     
-    /* .header-center ul {
-        gap: 1rem;
-    } */
+    .header-container {
+        padding: 0px 10px;
+    }
+
+    .download-btn img {
+        height: 50px;
+    }
     
     .feature-row, 
     .feature-row:nth-child(even) {
@@ -656,9 +667,10 @@ div.container > h2.download-title {
     }
     
     .download-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 1.5rem;
+        gap: .5rem;
     }
     
     .social-icons {
@@ -673,7 +685,6 @@ div.container > h2.download-title {
 @media (max-width: 480px) {
     h1 {
         font-size: 2rem;
-        margin-top: 10%;
     }
     
     h2 {
@@ -704,6 +715,7 @@ div.container > h2.download-title {
     .feature-row {
         margin: 50px 0px;
     }
+
     .download {
         margin: 0 2rem;
     }
@@ -732,12 +744,14 @@ div.container > h2.download-title {
   </head>
   <body>
     <header class="header" >
-      <div class="container">
+      <div class="cont ainer header-container">
         <div class="header-inner">
           
           <div class="header-left">
             <a href="https://yourmomentshub.com">
-              <img src="https://yourmomentshub.com/icons/MomentsHubLogo2.png" alt="MomentsHub Logo">
+              <img 
+              src="/public/icons/momentshub-logo.png"
+              alt="MomentsHub Logo">
             </a>
           </div>
           
@@ -767,6 +781,14 @@ div.container > h2.download-title {
           <h1>Capture & Share Real-Time Moments</h1>
           <p>Discover moments happening around you in real-time. Capture and share experiences wherever you are. Be part of the community today!</p>
           <!-- <div class="divider"></div> -->
+          <div class="download-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.daramfon.MomentsHub" class="download-btn">
+              <img src="https://yourmomentshub.com/icons/downloadgoogleplay.png" alt="Get it on Google Play">
+            </a>
+            <a href="https://apps.apple.com/us/app/momentshub/id6504739040" class="download-btn">
+              <img src="https://yourmomentshub.com/icons/downloadappstore.png" alt="Download on the App Store">
+            </a>
+          </div>
           <div class="video-container">
             <video autoplay muted loop>
               <source src="/public/video/momentshub.mp4" type="video/mp4">
@@ -794,7 +816,7 @@ div.container > h2.download-title {
         </div>
         
         <div class="featured-container">
-            <div class="feature-row container">
+            <div class="feature-row feature-row-reverse container">
               <div class="feature-content">
                 <h3 class="feature-title">Always Stay in the Loop</h3>
                 <p>

@@ -106,6 +106,7 @@ h1, h2, h3 {
 
     h4 {
         font-size: 2.5rem;
+        font-family: "Libre Baskerville", serif;
         margin-bottom: 1rem;
     }
 
@@ -739,11 +740,12 @@ div.container > h2.download-title {
     background-size: 60px 60px;
 }
 
-video::-webkit-media-controls-start-playback-button {
-    display: none !important;
+video::-webkit-media-controls {
+  display: none !important;
+  opacity: 0; 
 }
 
-video::-webkit-media-controls {
+video::-webkit-media-controls-start-playback-button {
     display: none !important;
 }
 
@@ -797,7 +799,7 @@ video::-webkit-media-controls {
             </a>
           </div>
           <div class="video-container">
-            <video autoplay muted loop>
+            <video autoplay muted loop playsinline >
               <source src="/public/video/momentshub.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -811,9 +813,9 @@ video::-webkit-media-controls {
         <div class="featured-container">
             <div class="feature-row  container">
               <div class="feature-content">
-                <h3 class="feature-title">Explore Moments from Around the World</h3>
+                <h3 class="feature-title">Capture & share beautiful moments</h3>
                 <p>
-                  Dive into a vibrant tapestry of experiences with MomentsHub! Discover stunning photos and captivating stories from users across the globe. Whether it's breathtaking landscapes, cultural celebrations, or personal milestones, each moment tells a unique tale.
+                  Dive into a vibrant tapestry of experiences with MomentsHub! Discover stunning photos and captivating stories from users across the globe.
                 </p>
               </div>
               <div class="feature-image">
@@ -825,13 +827,13 @@ video::-webkit-media-controls {
         <div class="featured-container">
             <div class="feature-row feature-row-reverse container">
               <div class="feature-content">
-                <h3 class="feature-title">Capture and Share Moments and Polls</h3>
+                <h3 class="feature-title">Share polls Around the world</h3>
                 <p>
-                  Unleash your creativity with MomentsHub! Capture the essence of your life by sharing stunning photos and heartfelt stories. Engage your community with fun polls that spark conversations and gather opinions.
+                  Unleash your creativity with MomentsHub! Capture the essence of your life by sharing stunning photos and heartfelt stories.
                 </p>
               </div>
               <div class="feature-image">
-                <img src="https://yourmomentshub.com/screenshot2.png" alt="Capture and Share" loading="lazy">
+                <img src="/public/icons/polls.png" alt="Capture and Share" loading="lazy">
               </div>
             </div>
         </div>
@@ -839,13 +841,13 @@ video::-webkit-media-controls {
         <div class="featured-container">
             <div class="feature-row container">
               <div class="feature-content">
-                <h3 class="feature-title">Always Stay in the Loop</h3>
+                <h3 class="feature-title">Always be in the Loop</h3>
                 <p>
-                  Never miss a beat with MomentsHub! Follow your friends and favorite creators to stay updated on the moments that matter most to them. Our intuitive feed keeps you in the loop, showcasing the latest photos, stories, and polls.
+                  Never miss a beat with MomentsHub! Follow your friends and favorite creators to stay updated on the moments that matter most to them.
                 </p>
               </div>
               <div class="feature-image">
-                <img src="https://yourmomentshub.com/screenshot3.png" alt="Stay in the Loop" loading="lazy">
+                <img src="/public/icons/loop.png" alt="Stay in the Loop" loading="lazy">
               </div>
             </div>
         </div>

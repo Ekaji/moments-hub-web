@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MomentsHub - Where Every Moment Matters</title>
     <meta name="apple-itunes-app" content="app-id=6504739040"/>
-    <link href="/fav.ico" rel="icon" />
+    <link href="/public/icons/fav.ico" rel="icon" />
     <link href="/manifest.webmanifest" rel="manifest" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="57x57" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="60x60" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="72x72" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="114x114" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="120x120" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="144x144" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="152x152" />
-    <link href="/fav.ico" rel="apple-touch-icon" sizes="180x180" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="57x57" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="60x60" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="72x72" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="114x114" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="120x120" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="144x144" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="152x152" />
+    <link href="/public/icons/fav.ico" rel="apple-touch-icon" sizes="180x180" />
     <meta property="og:url" content="https://yourmomentshub.com/" />
     <meta property="og:site_name" content="MomentsHub" />
     <meta property="og:title" content="MomentsHub" />
@@ -110,13 +110,20 @@ h1, h2, h3 {
         margin-bottom: 1rem;
     }
 
-p {
+ p {
     font-size: 1.125rem;
     line-height: 1.6;
     /* color: var(--light-text); */
     color: #1d1d1f;
     /* margin-bottom: 1.5rem; */
 }
+
+p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards 0.4s;
+}
+
 
 /* Layout */
 .container {
